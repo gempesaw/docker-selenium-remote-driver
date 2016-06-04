@@ -44,6 +44,9 @@ RUN apt-get install -y openjdk-7-jre
 RUN apt-get install -y xvfb
 RUN apt-get install -y phantomjs
 
+RUN git config --global user.name "docker"
+RUN git config --global user.email "docker@example.com"
+ENV DISPLAY=:1
 
 RUN apt-get install -y openssh-server
 RUN mkdir -p /var/run/sshd
@@ -57,10 +60,6 @@ RUN git clone https://github.com/gempesaw/Selenium-Remote-Driver /opt/Selenium-R
 WORKDIR /opt/Selenium-Remote-Driver
 RUN dzil authordeps --missing | xargs -n 5 -P 10 cpanm --notest --quiet
 RUN dzil listdeps   --missing | xargs -n 5 -P 10 cpanm --notest --quiet
-
-RUN git config --global user.name "docker"
-RUN git config --global user.email "docker@example.com"
-ENV DISPLAY=:1
 
 COPY start.sh /opt/Selenium-Remote-Driver/start.sh
 
