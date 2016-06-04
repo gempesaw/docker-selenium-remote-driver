@@ -45,6 +45,13 @@ RUN apt-get install -y xvfb
 RUN apt-get install -y phantomjs
 
 
+RUN apt-get install -y openssh-server
+RUN mkdir -p /var/run/sshd
+RUN echo 'root:password' | chpasswd
+RUN sed -i 's/PermitRootLogin .*/PermitRootLogin yes/' /etc/ssh/sshd_config
+RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+EXPOSE 22
+
 # get the newest version of our code
 RUN git clone https://github.com/gempesaw/Selenium-Remote-Driver /opt/Selenium-Remote-Driver
 WORKDIR /opt/Selenium-Remote-Driver
