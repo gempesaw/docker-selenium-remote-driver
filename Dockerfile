@@ -53,6 +53,6 @@ RUN git config --global user.name "docker"
 RUN git config --global user.email "docker@example.com"
 ENV DISPLAY=:1
 
-COPY . /opt/Selenium-Remote-Driver
+COPY start.sh /opt/Selenium-Remote-Driver/start.sh
 
 CMD ["/bin/bash", "start.sh"]
