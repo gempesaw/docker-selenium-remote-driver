@@ -38,10 +38,12 @@ RUN mv -f ~/Downloads/chromedriver /usr/local/bin/chromedriver
 # it explicitly seems to help
 RUN apt-get install -y libpcsclite1
 
-# install firefox, java, xvfb
+# install firefox, java, xvfb, phantomjs
 RUN apt-get install -y iceweasel
 RUN apt-get install -y openjdk-7-jre
 RUN apt-get install -y xvfb
+RUN apt-get install -y phantomjs
+
 
 # get the newest version of our code
 RUN git clone https://github.com/gempesaw/Selenium-Remote-Driver /opt/Selenium-Remote-Driver
