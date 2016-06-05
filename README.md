@@ -13,10 +13,10 @@ of the following:
 If you don't pass any arguments, it will run all of the tests, but you
 can specify a particular test to run if you'd like:
 
-    $ docker pull gempesaw/selenium-remote-driver
+    $ docker pull gempesaw/docker-selenium-remote-driver
     $ docker run --security-opt=seccomp=unconfined \
              -v /path/to/your/SRD:/opt/Selenium-Remote-Driver \
-             -it --rm gempesaw/selenium-remote-driver \
+             -it --rm gempesaw/docker-selenium-remote-driver \
              t/convenience.t # specifying a test is optional
 
 We use entrypoint, so to get a bash shell, you'd want to do
@@ -24,7 +24,7 @@ We use entrypoint, so to get a bash shell, you'd want to do
     $ docker run --security-opt=seccomp=unconfined \
              -v /path/to/your/SRD:/opt/Selenium-Remote-Driver \
              --entrypoint=/bin/bash \
-             -it --rm gempesaw/selenium-remote-driver
+             -it --rm gempesaw/docker-selenium-remote-driver
 
 That won't automatically start the selenium server, but you can see
 how to do in this repo's `start.sh`.
