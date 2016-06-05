@@ -42,13 +42,11 @@ ENV DISPLAY=:1
 
 # clean up package manager, get the newest version of SRD with deps
 RUN rm -rf /var/lib/apt/lists/* && \
-
     git config --global user.name "docker" && \
     git config --global user.email "docker@example.com" && \
 
     cpanm --notest --quiet Dist::Zilla && \
     cpanm --notest --quiet --installdeps Selenium::Remote::Driver && \
-
     mkdir -p /opt/Selenium-Remote-Driver
 
 WORKDIR /opt/Selenium-Remote-Driver

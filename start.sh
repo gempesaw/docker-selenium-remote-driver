@@ -4,4 +4,5 @@ xvfb-run --auto-servernum \
          -Dwebdriver.chrome.driver=$(which chromedriver) \
          -Dphantomjs.binary.path=$(which phantomjs) \
          > /opt/selenium/selenium.log 2>&1 & \
-    bash
+    perl t/bin/record.pl $1 && \
+    perl -Ilib $1
