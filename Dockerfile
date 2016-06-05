@@ -51,6 +51,6 @@ RUN cpanm --notest --quiet Dist::Zilla && \
     dzil authordeps --missing | xargs -n 5 -P 10 cpanm --notest --quiet && \
     dzil listdeps   --missing | xargs -n 5 -P 10 cpanm --notest --quiet
 
-COPY start.sh /opt/Selenium-Remote-Driver/start.sh
+COPY start.sh /root/start.sh
 
-CMD ["/bin/bash", "start.sh"]
+ENTRYPOINT ["/bin/bash", "/root/start.sh"]

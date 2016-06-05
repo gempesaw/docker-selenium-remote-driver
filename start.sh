@@ -1,3 +1,4 @@
+cd /opt/Selenium-Remote-Driver/ && \
 xvfb-run --auto-servernum \
          java -jar /opt/selenium/selenium-server-standalone.jar \
          -Dwebdriver.chrome.driver=$(which chromedriver) \
