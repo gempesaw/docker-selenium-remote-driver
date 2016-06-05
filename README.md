@@ -23,7 +23,7 @@ We use entrypoint, so to get a bash shell, you'd want to do
 
     $ docker run --security-opt=seccomp=unconfined \
              -v /path/to/your/SRD:/opt/Selenium-Remote-Driver \
-             --entrypoint=/bin/bash
+             --entrypoint=/bin/bash \
              -it --rm gempesaw/selenium-remote-driver
 
 That won't automatically start the selenium server, but you can see
