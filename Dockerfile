@@ -37,14 +37,8 @@ RUN apt-get install -y libpcsclite1 && \
     apt-get install -y iceweasel && \
     apt-get install -y openjdk-7-jre && \
     apt-get install -y xvfb && \
-    apt-get install -y phantomjs && \
-    apt-get install -y openssh-server && \
-    mkdir -p /var/run/sshd && \
-    echo 'root:password' | chpasswd && \
-    sed -i 's/PermitRootLogin .*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
-    sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+    apt-get install -y phantomjs
 ENV DISPLAY=:1
-EXPOSE 22
 
 # clean up package manager, get the newest version of SRD with deps
 RUN rm -rf /var/lib/apt/lists/* && \

@@ -8,7 +8,6 @@ sort of the following:
 - installs google chrome, firefox (iceweasel on debian), phantomjs
 - installs chromedriver
 - starts the selenium server with chromedriver & ghostdriver configured
-- starts an SSH server on 2222
 - drops in to a bash shell (this will probably change)
 
 Due to some issues with Chrome that I don't understand, you must

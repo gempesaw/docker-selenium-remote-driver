@@ -3,5 +3,4 @@ xvfb-run --auto-servernum \
          -Dwebdriver.chrome.driver=$(which chromedriver) \
          -Dphantomjs.binary.path=$(which phantomjs) \
          > /opt/selenium/selenium.log 2>&1 & \
-    service ssh start & \
     bash
