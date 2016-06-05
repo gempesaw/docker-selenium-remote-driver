@@ -1,8 +1,8 @@
 # docker-selenium-remote-driver
 
 A Dockerfile to generate Linux recordings for the
-gempesaw/Selenium-Remote-Driver perl Webdriver bindings. It does some
-sort of the following:
+[Selenium Remote Driver perl Webdriver bindings][0]. It does some sort
+of the following:
 
 - downloads selenium standalone server jar
 - installs google chrome, firefox (iceweasel on debian), phantomjs
@@ -34,6 +34,7 @@ provide a security option to `docker run` to get
 `google-chrome-stable` to start in the container. [link][1],
 [link][2], [link][3], [link][4]. ¯\_(ツ)_/¯
 
+[0]: https://github.com/gempesaw/Selenium-Remote-Driver
 [1]: https://github.com/docker/docker/issues/1079
 [2]: https://github.com/jfrazelle/dockerfiles/issues/65
 [3]: https://docs.docker.com/engine/reference/run/
